@@ -15,19 +15,23 @@ function loadPage(page) {
 }
 
 
-
 function toggleMenu() {
-  document.getElementById('menu').classList.toggle('active');
+  document.getElementById("menu").classList.toggle("active");
 }
 
-document.querySelectorAll('.menu > li > a').forEach(item => {
-  item.addEventListener('click', function (e) {
-    if (window.innerWidth <= 768) {
-      const parent = this.parentElement;
-      if (parent.querySelector('ul')) {
-        e.preventDefault();
-        parent.classList.toggle('open');
-      }
-    }
-  });
-});
+// Cierra el menú móvil
+function closeMenu() {
+  document.getElementById("menu").classList.remove("active");
+}
+
+// Carga páginas sin recargar header/footer
+function loadPage(page) {
+  fetch(page)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("content").innerHTML = data;
+      closeMenu(); // 👈 CLAVE: cerrar menú al hacer click
+    })
+    .catch(error => console.error("Error cargando página:", error));
+}
+
