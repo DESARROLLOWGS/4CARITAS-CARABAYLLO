@@ -50,10 +50,29 @@ document.addEventListener("click", function (e) {
 //===================================CARRUSEL=================================//
 let currentSlide = 0;
 const slides = document.querySelectorAll(".hero-slide");
+const dotsContainer = document.getElementById("hero-dots");
+let slideInterval;
+
+// Crear puntitos
+slides.forEach((_, index) => {
+  const dot = document.createElement("span");
+  dot.addEventListener("click", () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+    resetInterval();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+const dots = dotsContainer.querySelectorAll("span");
 
 function showSlide(index) {
   slides.forEach(slide => slide.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+  
   slides[index].classList.add("active");
+  dots[index].classList.add("active");
+  
 }
 
 function nextSlide() {
@@ -61,6 +80,15 @@ function nextSlide() {
   showSlide(currentSlide);
 }
 
-// Cambia cada 5 segundos
-setInterval(nextSlide, 5000);
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 5000);
+}
 
+// Inicializar
+showSlide(currentSlide);
+slideInterval = setInterval(nextSlide, 5000);
+
+// Cambia cada 5 segundos
+//setInterval(nextSlide, 5000);
+//* ============================================================================//
