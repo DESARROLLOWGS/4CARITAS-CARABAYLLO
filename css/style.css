@@ -72,7 +72,7 @@ header {
 /* ===== HERO ===== */
 .hero {
   height: 75vh;
-  background: url('../assets/img/hero.jpg') center/cover no-repeat;
+  background: url('../assets/img/hero.jpeg') center/cover no-repeat;
   position: relative;
 }
 
