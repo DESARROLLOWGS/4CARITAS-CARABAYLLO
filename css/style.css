@@ -17,6 +17,10 @@ body {
 
 /* ===== HEADER ===== */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 4000;
+  
   background: white;
   border-bottom: 3px solid var(--rojo);
   padding: 15px 40px;
@@ -149,8 +153,14 @@ footer {
     padding: 15px 20px;
   }
 
+  .logo {
+    margin-right: auto;
+  }
+
   .menu-toggle {
     display: block;
+    margin-left: auto;
+    z-index: 5000;
   }
 
   nav {
@@ -169,7 +179,7 @@ footer {
     background: white;
     flex-direction: column;
     display: none;
-    padding-top: 80px;
+    padding-top: 90px;
     box-shadow: -5px 0 20px rgba(0,0,0,0.2);
     z-index: 3000;
   }
