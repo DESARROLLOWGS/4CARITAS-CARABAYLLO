@@ -14,7 +14,7 @@ function loadPage(page) {
     });
 }
 
-
+//=============== MENU HAMBURGUESA =====================================//
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
@@ -34,4 +34,15 @@ function loadPage(page) {
     })
     .catch(error => console.error("Error cargando página:", error));
 }
+
+
+// ============= CIERRA EL MENU AL DAR CLICK FUERA =========================//
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("menu");
+  const toggle = document.querySelector(".menu-toggle");
+
+  if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+    menu.classList.remove("active");
+  }
+});
 
