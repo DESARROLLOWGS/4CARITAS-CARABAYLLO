@@ -14,3 +14,20 @@ function loadPage(page) {
     });
 }
 
+
+
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+document.querySelectorAll('.menu > li > a').forEach(item => {
+  item.addEventListener('click', function (e) {
+    if (window.innerWidth <= 768) {
+      const parent = this.parentElement;
+      if (parent.querySelector('ul')) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    }
+  });
+});
