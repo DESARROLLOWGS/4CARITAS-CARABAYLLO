@@ -1,1 +1,73 @@
-hola web
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cáritas Carabayllo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Cáritas Carabayllo</div>
+  <nav>
+    <ul class="menu">
+      <li>
+        <a href="#" onclick="loadPage('nosotros.html')">Nosotros</a>
+        <ul>
+          <li><a onclick="loadPage('mision.html')">Misión</a></li>
+          <li><a onclick="loadPage('vision.html')">Visión</a></li>
+          <li><a onclick="loadPage('valores.html')">Valores</a></li>
+          <li><a onclick="loadPage('ambito.html')">Ámbito de Acción</a></li>
+          <li><a onclick="loadPage('equipo.html')">Equipo</a></li>
+          <li><a onclick="loadPage('memorias.html')">Memorias</a></li>
+          <li><a onclick="loadPage('documentos.html')">Documentos Pastorales</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" onclick="loadPage('proyectos.html')">Proyectos</a>
+        <ul>
+          <li><a onclick="loadPage('ollas.html')">Ollas Comunes</a></li>
+          <li><a onclick="loadPage('turrones.html')">Turrones</a></li>
+          <li><a onclick="loadPage('textiles.html')">Textiles</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Súmate</a>
+        <ul>
+          <li><a onclick="loadPage('voluntariado.html')">Voluntariado</a></li>
+          <li><a onclick="loadPage('donaciones.html')">Donaciones</a></li>
+          <li><a onclick="loadPage('aliados.html')">Aliados</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Transparencia</a>
+        <ul>
+          <li><a onclick="loadPage('normas.html')">Normas</a></li>
+          <li><a onclick="loadPage('organizacion.html')">Organización</a></li>
+          <li><a onclick="loadPage('reclamos.html')">Formulario de Reclamos</a></li>
+          <li><a onclick="loadPage('rendicion.html')">Rendición Anual</a></li>
+        </ul>
+      </li>
+
+      <li><a onclick="loadPage('contacto.html')">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="content">
+  <h1>Bienvenidos a Cáritas Carabayllo</h1>
+  <p>Trabajando por la dignidad humana y la solidaridad.</p>
+</main>
+
+<footer>
+  <p>© 2026 Cáritas Carabayllo – Todos los derechos reservados</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
