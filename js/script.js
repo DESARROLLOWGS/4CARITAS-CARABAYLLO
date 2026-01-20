@@ -46,3 +46,21 @@ document.addEventListener("click", function (e) {
   }
 });
 
+
+//===================================CARRUSEL=================================//
+let currentSlide = 0;
+const slides = document.querySelectorAll(".hero-slide");
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Cambia cada 5 segundos
+setInterval(nextSlide, 5000);
+
