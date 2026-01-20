@@ -186,11 +186,15 @@ footer {
 @media (max-width: 768px) {
 
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
   }
 
   .menu-toggle {
     display: block;
+    margin-left: auto;
   }
 
   nav {
@@ -198,12 +202,17 @@ footer {
   }
 
   .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 85%;
+    max-width: 320px;
+    height: calc(100vh - 70px);
+    background: white;
     flex-direction: column;
     display: none;
-    background: white;
-    width: 100%;
-    margin-top: 15px;
-    border-top: 1px solid #eee;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+    z-index: 2000;
   }
 
   .menu.active {
@@ -216,8 +225,8 @@ footer {
 
   .menu li ul {
     position: static;
-    box-shadow: none;
     display: none;
+    box-shadow: none;
   }
 
   .menu li.open > ul {
@@ -225,6 +234,6 @@ footer {
   }
 
   .menu a {
-    padding: 15px;
+    padding: 15px 20px;
   }
 }
