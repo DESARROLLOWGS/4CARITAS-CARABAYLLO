@@ -394,3 +394,77 @@ footer {
   }
 }
 
+
+/* ===== SÚMATE ===== */
+.join-home {
+  background: white;
+  padding: 80px 40px;
+}
+
+.join-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.join-home h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--rojo);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.join-intro {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.join-card {
+  background: var(--gris);
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.join-card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.join-card h3 {
+  color: var(--rojo);
+  margin-bottom: 10px;
+}
+
+.join-card p {
+  font-size: .95rem;
+  margin-bottom: 25px;
+}
+
+.join-card button {
+  background: var(--rojo);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: .95rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .join-grid {
+    grid-template-columns: 1fr;
+  }
+}
