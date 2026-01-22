@@ -1,101 +1,101 @@
+// ================== CARGA DE PAGINAS ================== //
 function loadPage(page) {
-  fetch('pages/' + page)
+  fetch(page)
     .then(response => {
       if (!response.ok) throw new Error("No encontrado");
       return response.text();
     })
     .then(data => {
-      document.getElementById('content').innerHTML = data;
+      document.getElementById("content").innerHTML = data;
       window.scrollTo(0, 0);
+      closeMenu();
+
+      // Re-inicializar componentes
+      initHeroSlider();
+      initTestimonials();
     })
     .catch(() => {
-      document.getElementById('content').innerHTML =
+      document.getElementById("content").innerHTML =
         "<h2>Error</h2><p>Contenido no disponible.</p>";
     });
 }
 
-//=============== MENU HAMBURGUESA =====================================//
+// ================== MENU HAMBURGUESA ================== //
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
 
-// Cierra el menú móvil
 function closeMenu() {
   document.getElementById("menu").classList.remove("active");
 }
 
-// Carga páginas sin recargar header/footer
-function loadPage(page) {
-  fetch(page)
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("content").innerHTML = data;
-      closeMenu(); // 👈 CLAVE: cerrar menú al hacer click
-    })
-    .catch(error => console.error("Error cargando página:", error));
-}
-
-
-// ============= CIERRA EL MENU AL DAR CLICK FUERA =========================//
+// Cierra menú al hacer click fuera
 document.addEventListener("click", function (e) {
   const menu = document.getElementById("menu");
   const toggle = document.querySelector(".menu-toggle");
+
+  if (!menu || !toggle) return;
 
   if (!menu.contains(e.target) && !toggle.contains(e.target)) {
     menu.classList.remove("active");
   }
 });
 
+// ================== HERO SLIDER ================== //
+let heroInterval;
 
-//===================================CARRUSEL=================================//
-let currentSlide = 0;
-const slides = document.querySelectorAll(".hero-slide");
-const dotsContainer = document.getElementById("hero-dots");
-let slideInterval;
+function initHeroSlider() {
+  const slides = document.querySelectorAll(".hero-slide");
+  const dotsContainer = document.getElementById("hero-dots");
 
-// Crear puntitos
-slides.forEach((_, index) => {
-  const dot = document.createElement("span");
-  dot.addEventListener("click", () => {
-    currentSlide = index;
-    showSlide(currentSlide);
-    resetInterval();
+  if (!slides.length || !dotsContainer) return;
+
+  let currentSlide = 0;
+  dotsContainer.innerHTML = "";
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      currentSlide = index;
+      showSlide();
+      resetInterval();
+    });
+    dotsContainer.appendChild(dot);
   });
-  dotsContainer.appendChild(dot);
-});
 
-const dots = dotsContainer.querySelectorAll("span");
+  const dots = dotsContainer.querySelectorAll("span");
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active"));
-  
-  slides[index].classList.add("active");
-  dots[index].classList.add("active");
-  
+  function showSlide() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide();
+  }
+
+  function resetInterval() {
+    clearInterval(heroInterval);
+    heroInterval = setInterval(nextSlide, 5000);
+  }
+
+  showSlide();
+  heroInterval = setInterval(nextSlide, 5000);
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
+// ================== TESTIMONIOS SLIDER ================== //
+function initTestimonials() {
+  const testimonials = document.querySelectorAll(".testimonial-card");
+  const dotsContainer = document.getElementById("testimonials-dots");
 
-function resetInterval() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 5000);
-}
+  if (!dotsContainer || !testimonials.length) return;
 
-// Inicializar
-showSlide(currentSlide);
-slideInterval = setInterval(nextSlide, 5000);
+  dotsContainer.innerHTML = "";
 
-// Cambia cada 5 segundos
-//setInterval(nextSlide, 5000);
-//* ======================================TESTIMONIOS SLIDER======================================//
-const testimonials = document.querySelectorAll(".testimonial-card");
-const dotsContainer = document.getElementById("testimonials-dots");
-
-if (dotsContainer && testimonials.length > 0) {
   testimonials.forEach((_, i) => {
     const dot = document.createElement("span");
     if (i === 0) dot.classList.add("active");
@@ -116,3 +116,9 @@ if (dotsContainer && testimonials.length > 0) {
     });
   }
 }
+
+// ================== INICIAL ================== //
+document.addEventListener("DOMContentLoaded", () => {
+  initHeroSlider();
+  initTestimonials();
+});
