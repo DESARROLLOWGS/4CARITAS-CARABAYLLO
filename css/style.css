@@ -409,3 +409,12 @@ footer {
 .btn-donacion {
   background: #c62828;
 }
+
+.testimonials-separator {
+  width: 80px;
+  height: 3px;
+  background: var(--rojo);
+  margin: 0 auto 60px;
+  border-radius: 3px;
+}
+
