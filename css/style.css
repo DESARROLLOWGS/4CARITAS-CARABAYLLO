@@ -774,3 +774,42 @@ footer {
   transform: translateY(-3px);
 }
 
+/* ================= IMPACTO / CIFRAS ================= */
+.impact-home {
+  background-color: #b11226; /* rojo institucional */
+  padding: 60px 20px;
+}
+
+.impact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.impact-item {
+  color: #fff;
+}
+
+.impact-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.impact-text {
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .impact-number {
+    font-size: 2.5rem;
+  }
+}
