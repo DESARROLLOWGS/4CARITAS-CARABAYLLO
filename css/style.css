@@ -746,3 +746,31 @@ footer {
     margin: 0 20px;
   }
 }
+
+/* ================= REDES SOCIALES FOOTER ================= */
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: #fff;
+  color: #c62828; /* rojo institucional */
+  transform: translateY(-3px);
+}
+
