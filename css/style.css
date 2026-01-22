@@ -813,3 +813,54 @@ footer {
     font-size: 2.5rem;
   }
 }
+
+/* ===== IMPACTO / CIFRAS ===== */
+.impact-home {
+  background: linear-gradient(135deg, #b11226 0%, #8f0e1e 100%);
+  padding: 45px 20px; /* 👈 FRANJA MÁS ANGOSTA */
+  color: white;
+}
+
+.impact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impact-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.impact-item p {
+  font-size: .95rem;
+  opacity: .9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .impact-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .impact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-number {
+    font-size: 2.6rem;
+  }
+}
