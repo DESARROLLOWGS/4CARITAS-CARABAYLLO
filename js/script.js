@@ -91,4 +91,28 @@ slideInterval = setInterval(nextSlide, 5000);
 
 // Cambia cada 5 segundos
 //setInterval(nextSlide, 5000);
-//* ============================================================================//
+//* ======================================TESTIMONIOS SLIDER======================================//
+const testimonials = document.querySelectorAll(".testimonial-card");
+const dotsContainer = document.getElementById("testimonials-dots");
+
+if (dotsContainer && testimonials.length > 0) {
+  testimonials.forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+
+    dot.addEventListener("click", () => {
+      testimonials[i].scrollIntoView({
+        behavior: "smooth",
+        inline: "center"
+      });
+      updateDots(i);
+    });
+  });
+
+  function updateDots(index) {
+    dotsContainer.querySelectorAll("span").forEach((d, i) => {
+      d.classList.toggle("active", i === index);
+    });
+  }
+}
