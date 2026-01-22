@@ -696,3 +696,53 @@ footer {
   }
 }
 
+
+/* ================= CINTA DE ALIANZAS ================= */
+
+.alliances {
+  background: #c62828; /* rojo institucional */
+  overflow: hidden;
+  padding: 18px 0;
+}
+
+.alliances-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: alliancesScroll 25s linear infinite;
+}
+
+.alliances-track img {
+  height: 60px;
+  margin: 0 40px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.alliances-track img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Pausa al pasar el mouse */
+.alliances:hover .alliances-track {
+  animation-play-state: paused;
+}
+
+@keyframes alliancesScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .alliances-track img {
+    height: 45px;
+    margin: 0 20px;
+  }
+}
