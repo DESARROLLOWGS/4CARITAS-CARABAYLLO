@@ -338,6 +338,14 @@ header {
   padding: 80px 40px;
 }
 
+.testimonials-intro {
+  max-width: 750px;
+  margin: 0 auto 70px; /* MÁS ESPACIO */
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
