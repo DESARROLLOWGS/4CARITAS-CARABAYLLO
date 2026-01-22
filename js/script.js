@@ -122,3 +122,39 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initTestimonials();
 });
+
+
+// ===== CONTADOR DE IMPACTO =====
+const counters = document.querySelectorAll(".impact-number");
+let impactStarted = false;
+
+function animateImpact() {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let current = 0;
+    const increment = target / 80;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        counter.textContent = Math.ceil(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target + "+";
+      }
+    };
+
+    updateCounter();
+  });
+}
+
+window.addEventListener("scroll", () => {
+  const impactSection = document.querySelector(".impact-home");
+  const sectionTop = impactSection.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight - 100 && !impactStarted) {
+    animateImpact();
+    impactStarted = true;
+  }
+});
