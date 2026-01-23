@@ -1081,3 +1081,73 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ================= ÁMBITO DE ACCIÓN ================= */
+.ambito {
+  background: #fafafa;
+}
+
+.ambito-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.ambito h2 {
+  color: var(--rojo);
+  margin-bottom: 15px;
+}
+
+.ambito-intro {
+  max-width: 750px;
+  margin: 0 auto 50px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.ambito-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.ambito-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ambito-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.ambito-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.ambito-card h3 {
+  color: var(--rojo);
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.ambito-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ambito-intro {
+    font-size: 1rem;
+  }
+}
+
