@@ -124,11 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ===== CONTADOR DE IMPACTO =====
+// ===== CONTADOR + ANIMACIÓN IMPACTO =====
+const impactItems = document.querySelectorAll(".impact-item");
 const counters = document.querySelectorAll(".impact-number");
 let impactStarted = false;
 
 function animateImpact() {
+  impactItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add("show");
+    }, index * 150);
+  });
+
   counters.forEach(counter => {
     const target = +counter.getAttribute("data-target");
     let current = 0;
@@ -153,8 +160,9 @@ window.addEventListener("scroll", () => {
   const sectionTop = impactSection.getBoundingClientRect().top;
   const screenHeight = window.innerHeight;
 
-  if (sectionTop < screenHeight - 100 && !impactStarted) {
+  if (sectionTop < screenHeight - 120 && !impactStarted) {
     animateImpact();
     impactStarted = true;
   }
 });
+
