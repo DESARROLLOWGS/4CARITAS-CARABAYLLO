@@ -911,7 +911,7 @@ footer {
   text-align: center;
 }
 
-.hero-overlay {
+.hero-interno-overlay {
   position: absolute;
   inset: 0;
   background: rgba(180, 0, 0, 0.45);
