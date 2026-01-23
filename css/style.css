@@ -890,3 +890,185 @@ footer {
   margin-top: 4px;
   display: block;
 }
+
+
+
+/*-=================================== PÁGINA NOSOTROS ======================================-*/
+/* HERO INTERNO */
+.hero-interno {
+  position: relative;
+  height: 45vh;
+  background: url("../assets/img/hero-nosotros.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* SECCIONES GENERALES */
+section {
+  padding: 80px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* QUIÉNES SOMOS */
+.nosotros-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.nosotros-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* MISIÓN VISIÓN */
+.mision-vision {
+  background: #f7f7f7;
+}
+
+.mv-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.mv-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* VALORES */
+.valores-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.valor-item {
+  background: #b00000;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* ÁMBITO */
+.ambito {
+  background: #fafafa;
+  text-align: center;
+}
+
+.ambito-list {
+  list-style: none;
+  max-width: 600px;
+  margin: auto;
+  padding: 0;
+}
+
+.ambito-list li {
+  padding: 10px _verde;
+  font-size: 1.05rem;
+}
+
+/* EQUIPO */
+.equipo-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.equipo-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+/* DOCUMENTOS */
+.docs-grid {
+  max-width: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.doc-card {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* CTA FINAL */
+.cta-final {
+  background: #b00000;
+  color: #fff;
+  text-align: center;
+}
+
+.cta-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-solid {
+  background: #fff;
+  color: #b00000;
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nosotros-grid {
+    grid-template-columns: 1fr;
+  }
+}
